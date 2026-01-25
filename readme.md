@@ -54,17 +54,10 @@ Example using the helper modules directly (when available in your bundle):
 
 ```javascript
 import { captureNetworkEvents } from 'deltatrack/src/network';
-import { capturePerformanceMetrics } from 'deltatrack/src/performance';
 
-// You may pass a backend URL and projectId if you want to override the built-in ingest URL.
-captureNetworkEvents('https://your-backend.example.com/events/ingest', 'my-project-id');
-capturePerformanceMetrics('https://your-backend.example.com/events/ingest', 'my-project-id');
+captureNetworkEvents( 'my-project-id');
 ```
 
-## Configuration
-
-- The ingest endpoint is defined in `src/config.js` as `INGEST_URL` (defaults to `http://localhost:3000/events/ingest`). Change this value before building or provide your own wrapping logic to route events differently.
-- Project key is stored in memory via `src/state.js` using `setProjectKey`/`getProjectKey` and is sent as the `x-project-key` header on outgoing requests.
 
 ## Development
 
